@@ -2,7 +2,7 @@
 
 This repository contains frontend exercises and supplemental material for the Ymir cohort.
 
-## Staff
+### Staff
 
 Instructors: Mark Robinson and Ana Moreno
 
