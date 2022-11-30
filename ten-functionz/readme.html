@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  
+  <link rel="stylesheet" href="./style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120907291-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-120907291-1');
+  </script>
+
+  </head>  
+  <body>
+
+    
+<h2>
+  See <a href="./index.html"><pre>index.html</pre></a> for test feedback
+  
+</h2>
+<h3>
+  Click here to edit <a id="solutions-edit-link" href=""><pre>Solutions.js</pre></a>
+</h3>
+<ol>
+<!--   <li>The comments to the right of the function call example demonstrate the output of the function's operation on the provided input(s). Add your function definitions to solutions.js. Refresh results.html to run automated tests for feedback on your solutions.</li> -->
+  <li>Define a function named <pre>isTrue</pre> that takes in any input and returns true if the input provided is exactly equal to true in value and boolean in data type.  </li>
+  <br>
+  <article>
+  <pre>isTrue(true)             // true</pre>
+  <pre>isTrue(false)            // false</pre>
+  <pre>isTrue(0)                // false</pre>
+  <pre>isTrue(null)             // false</pre>
+  <pre>isTrue("true")           // false</pre>
+  <pre>isTrue("Banana")         // false</pre>
+  <pre>isTrue([1, 2])           // false</pre>
+  </article>
+  
+  <li>Define a function named isFalse that takes in a value and returns true if and only if the argument provided false.</li>
+
+  <article>
+    <pre>isFalse(false)             // true</pre>
+    <pre>isFalse(true)              // false</pre>
+    <pre>isFalse(0)                 // false</pre>
+    <pre>isFalse(null)              // false</pre>
+    <pre>isFalse("")                // false</pre>
+    <pre>isFalse("Banana")          // false</pre>
+    <pre>isFalse([1, 2])            // false</pre>
+    </article>
+  <li>Define a function named not that takes in any input and returns the boolean opposite of the provided input.</li>
+  <article>   
+    <pre>not(false)                  // true</pre>
+    <pre>not(0)                      // true</pre>
+    <pre>not("")                     // true</pre>
+    <pre>not(null)                   // true</pre>
+    <pre>not(NaN)                    // true</pre>
+    <pre>not(undefined)              // true</pre>
+    <pre>not(true)                   // false</pre>
+    <pre>not("something")            // false</pre>
+    <pre>not(Infinity)               // false</pre>
+    <pre>not(123)                    // false</pre>
+    </article>
+<li>Define a function named addOne that takes in a single input. If the input is a number or a numeric string, return the value plus one.</li>
+<article>
+  <pre>addOne(0)                    // 1</pre>
+  <pre>addOne(2)                    // 3</pre>
+  <pre>addOne(-5)                   // -4 </pre>
+  <pre>addOne(5.789)                // 6.789</pre>
+  <pre>addOne(Infinity)             // Infinity</pre>
+  <pre>addOne("2")                  // 3</pre>
+  <pre>addOne("0")                  // 1</pre>
+  <pre>addOne("banana")             // NaN</pre>
+  <pre>addOne(true)                 // NaN</pre>
+  <pre>addOne(NaN)                  // NaN</pre>
+</article>
+  
+<li>Define a function named isEven that takes in a single input. If the input is an even number or a string containing an even number, return true. Any other input should return false for the output.</li>
+  
+  <article>
+    <pre>isEven(2)                   // true</pre>
+    <pre>isEven(-8)                  // true</pre>
+    <pre>isEven(0)                   // true</pre>
+    <pre>isEven("42")                // true</pre>
+    <pre>isEven(1)                   // false</pre>
+    <pre>isEven("-3")                // false</pre>
+    <pre>isEven(false)               // false</pre>
+    <pre>isEven("banana")            // false</pre>
+    </article>
+  <li>Define a function named isIdentical that takes in two input arguments. If each input is equal both in data type and in value, then return true. If the values are not the same data type or not the same value, return false.</li>
+  <article> 
+    <pre>isIdentical(3, 3)                     // true</pre>
+    <pre>isIdentical(false, false)             // true</pre>
+    <pre>isIdentical("hello", "hello")         // true</pre>
+    <pre>isIdentical(3, 3.0)                   // true</pre>
+    <pre>isIdentical(undefined, undefined)     // true</pre>
+    <pre>isIdentical(2, "2")                   // false</pre>
+    <pre>isIdentical("javascript", "java")     // false</pre>
+  </article>
+  <li>Define a function named isEqual that takes in two input arguments. If each argument is equal only in value, then return true. Otherwise return false.</li>
+  <article>
+    <pre>isEqual(3, "3")                       // true</pre>
+    <pre>isEqual("abc123", "abc123")           // true</pre>
+    <pre>isEqual(true, 1)                      // true</pre>
+    <pre>isEqual(0, false)                     // true</pre>
+    <pre>isEqual(4, -5)                        // false</pre>
+    <pre>isEqual("java", "javascript")         // false</pre>
+    </article>
+  <li>Define a function named or that takes in two input arguments. The output returned should be the result of an or operation on both inputs.</li>
+  <article>
+    <pre>or(true, true)                    // true</pre>
+    <pre>or(true, false)                   // true</pre>
+    <pre>or(false, true)                   // true</pre>
+    <pre>or(false, false)                  // false</pre>
+    <pre>or("hello", "world")              // "hello" (this behavior is non-obvious, research more!)</pre>
+    </article>
+  <li>Define a function named and that takes in two input arguments and returns the result of a logical and operation of both inputs.</li>
+  <article>
+  <pre>and(true, true)                    // true</pre>
+  <pre>and(true, false)                   // false</pre>
+  <pre>and(false, true)                   // false</pre>
+  <pre>and(false, false)                  // false</pre>
+  <pre>and("hello", "world")              // "world" (this behavior is non-obvious, research more)</pre>
+    </article>
+  <li>Define a function named concat that takes in two input arguments. If both arguments are strings, then return the concatenated result. If two numbers are provided, then return the string concatenation of each set of numerals.</li>
+  <article>
+  <pre>concat("code", "up")                // "codeup"</pre>
+  <pre>concat("connect", 4)                // "connect4"</pre>
+  <pre>concat("hello", "world")            // "helloworld"</pre>
+  <pre>concat(4, 2)                        // "42"</pre>
+  <pre>concat(true, true)                  // "truetrue"</pre>
+  </article>
+</ol>
+    
+    <script src="./client.js"></script>
+  </body>
+</html>

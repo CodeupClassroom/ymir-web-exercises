@@ -1,0 +1,66 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+width: 66%;
+  margin: 0 auto;
+}
+
+main {
+  
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+  color: #373fff;
+}
+
+#exercises {
+  margin-top: 2em;
+}
+
+pre {
+  display: inline;
+  font-size: 1.23em;
+}
+
+#home {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: .5em;
+}
+
+body > div > div.jasmine-alert > span.jasmine-menu.jasmine-bar.jasmine-failure-list > a {
+  font-size: 2em;
+  margin: 2em;
+  text-align: center;
+}
+
+body > div > div.jasmine-alert > span.jasmine-menu.jasmine-bar.jasmine-spec-list > a {
+ font-size: 2em;
+  margin: 2em;
+  text-align: center;
+}
+
+body > div > div.jasmine-alert > span.jasmine-menu.jasmine-bar.jasmine-failure-list > span {
+  font-size: 2em;
+  margin: 2em;
+  text-align: center;
+}
+
+body > div > div.jasmine-alert > span.jasmine-menu.jasmine-bar.jasmine-spec-list > span {
+  font-size: 2em;
+  margin: 2em;
+  text-align: center;
+}
+
+article > pre {
+  display: block;
+}
+
+p {
+  text-align: center;
+}
