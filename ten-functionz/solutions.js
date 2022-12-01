@@ -2,6 +2,7 @@
 
 // this is a change
 // and another change
+// and another change
 
 /**
  * Write your solutions here.
@@ -24,3 +25,34 @@
  * concat
  */
 
+function isTrue(input) {
+    return input === true;
+}
+
+function isFalse(input) {
+    return input === false;
+    // return !isTrue(input);
+}
+
+
+function addOne(input) {
+    if(!isNaN(input)) {
+        return parseFloat(input) + 1;
+    }
+    return input;
+}
+
+
+function isEven(input) {
+    // if false then return false because of stupid test case
+    if(input === false) {
+        return false;
+    }
+    // if is a number then check if it is even
+    if(!isNaN(input)) {
+        if(input % 2 === 0) {
+            return true;
+        }
+    }
+    return false;
+}
