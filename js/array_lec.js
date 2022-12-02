@@ -10,17 +10,31 @@
         // lots more functionality
 
     // declare an array of fruits
+    let fruits = ["peach", "apple", "pear", "banana"];
+    console.log(fruits);
 
     // show length property
+    console.log(fruits.length);
 
     // show accessing a single element via indexing
         // also access invalid element
+    console.log(fruits[0]);
+    let anotherFruit = "tomato";
+    fruits[0] = anotherFruit;
+    console.log(fruits[0]);
+
+    // console.log(fruits[4]);
 
     // arrays + loops
 
     // for i loop
         // show how to stop iteration
-
+    for (let i = 0; i < fruits.length; i++) {
+        if(fruits[i] === "banana") {
+            break;
+        }
+        console.log(fruits[i]);
+    }
         // explain init, test, update parts
         // spend time tracing on the board how the loop works
 
@@ -28,14 +42,49 @@
         // of all elements separated by a comma
         // fencepost loop
 
+    function arrayStringify(arr) {
+        let result = "";
+        for (let i = 0; i < arr.length; i++) {
+            if(i > 0) {
+                result += ", ";
+            }
+            result += fruits[i];
+        }
+        return result;
+    }
+
+    console.log("stringified fruit is " + arrayStringify(fruits));
+
     // for each loop
         // explain callback function
         // show changing element in callback function DOES NOT change the element IN THE ARRAY
         // can't EASILY stop iteration
+    console.log("--------------------");
+
+    function printFruit(fruit, index) {
+        // escape early if we see an apple
+        if(fruit === "apple") {
+            return;
+        }
+        console.log(`${index + 1}. ${fruit}`);
+    }
+
+    fruits.forEach(printFruit);
 
     // for of loop
         // show changing element in callback function DOES NOT change the element IN THE ARRAY
         // can we stop iteration???
+    console.log("--------------------");
+    let i = 1;
+    for (let fruit of fruits) {
+        if(fruit === "apple") {
+            break;
+        }
+        // fruit = "gross!!!!";
+        console.log(i + ". " + fruit);
+        i++;
+    }
+    console.log(fruits);
 
     // *** MANIPULATING ARRAYS
 
