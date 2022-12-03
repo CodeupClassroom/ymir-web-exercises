@@ -90,41 +90,83 @@
 
     // adding elements
         // push a fruit to the end of the array
+    fruits.push("guava");
+    console.log(fruits);
 
         // unshift a fruit to the front of the array
+    fruits.unshift("plum");
+    console.log(fruits);
 
     // removing elements
         // pop removes a fruit from the end
+    fruits.pop();
+    console.log(fruits);
 
         // shift removes a fruit from the front
+    fruits.shift();
+    console.log(fruits);
 
     // finding values in an array
         // .indexOf
         // use .indexOf for something that is not in the array
 
-        // also show .indexOf(<str>, <index to start from>)
+    console.log(fruits.indexOf("apple"));
+    console.log(fruits.indexOf("guava"));
 
-        // .lastIndexOf
+        // also show .indexOf(<str>, <index to start from>)
+    fruits.push("apple");
+    fruits.unshift("apple");
+    console.log(fruits);
+
+    console.log(fruits.indexOf("apple"));
+    console.log(fruits.indexOf("apple", 1));
+    console.log(fruits.indexOf("apple", 3));
+    console.log(fruits.lastIndexOf("apple"));
+
+    // .lastIndexOf
 
         // .includes
+    console.log(fruits.includes("pear"));
+    console.log(fruits.includes("durian"));
 
     // copying a subset of an array (DOES NOT MODIFY ORIGINAL)
         // .slice(<start index inclusive>, <end idx exclusive>)
+    console.log(fruits.slice(2, 5));
 
         // .slice with 1 argument
+    console.log(fruits.slice(2));
 
     // reversing an array (DOES MODIFY ORIGINAL)
         // .reverse()
 
+    fruits.reverse();
+    console.log(fruits);
+
+
     // sort (DOES MODIFY ORIGINAL)
         // show sorted fruit
 
+    fruits.sort();
+    console.log(fruits);
+
         // also show sorted array of numbers [1, 2, 3, 4, 5, 10, 11, 12]
             // how to solve?
+    let numArray = [1, 2, 3, 4, 5, 10, 11, 12];
+    numArray.sort();
+    console.log(numArray);
+
+    numArray.sort(function(a, b) {
+        return a - b;
+    });
+    console.log(numArray);
 
     // splitting a string: "the quick brown fox jumped over the lazy dog"
+    let str = "the quick brown fox jumped over the lazy dog";
+    let words = str.split(" ");
+    console.log(words);
 
     // joining an array: join the split array back to a string
-
+    console.log(words.join(", "))
+    console.log(fruits.join(", "));
 
 })();
