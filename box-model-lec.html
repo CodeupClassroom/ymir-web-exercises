@@ -5,23 +5,37 @@
     <title>Box Model Lecture</title>
 
     <style>
+        #myBackground {
+            background-color: darkcyan;
+        }
+
         #myParagraph {
 
             /*start off with a border*/
+            /* explain px vs em and benefit of em */
+            /* ref: https://www.w3.org/Style/Examples/007/units.en.html#:~:text=The%20em%20is%20simply%20the,sizes%20will%20be%20in%20proportion. */
+
+            /*show content, padding, border, and margin areas in browser inspect*/
+            /*define each*/
 
             /*explain box-sizing (content vs border) */
             /*ref: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
 
             /*set width and height*/
+            /* then change box-sizing */
 
             /*show in inspect and change from content to border*/
             /*also change box-sizing in the inspect area */
+            /* and resize the browser to see effect */
 
             /*add some padding*/
+            /* show different ways to pad: t/b l/r, and t r b l */
 
             /*add some margin*/
+            /* show different ways to add margin: t/b l/r, and t r b l */
 
             /*note that the body has margin by default*/
+            /* show it in the browser inspect */
 
             /*play around with box model lec2*/
 
@@ -35,10 +49,12 @@
 </head>
 <body>
 
-    <p id="myParagraph">
-        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    </p>
-    <span id="mySpan">Hello world</span>
+    <div id="myBackground">
+        <p id="myParagraph">
+            ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <span id="mySpan">Hello world</span>
+    </div>
 
 </body>
 </html>
