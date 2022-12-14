@@ -5,13 +5,27 @@
     <title>Box Model Lecture</title>
 
     <style>
+        :root {
+            --my-border-color: green;
+        }
+
+        body {
+            margin: 0px;
+        }
+
         #myBackground {
-            background-color: darkcyan;
+            background-color: goldenrod;
+            /*width: 400px;*/
         }
 
         #myParagraph {
 
             /*start off with a border*/
+            border: 20px var(--my-border-color) solid;
+
+
+            /*use a css variable for color*/
+
             /* explain px vs em and benefit of em */
             /* ref: https://www.w3.org/Style/Examples/007/units.en.html#:~:text=The%20em%20is%20simply%20the,sizes%20will%20be%20in%20proportion. */
 
@@ -23,6 +37,9 @@
 
             /*set width and height*/
             /* then change box-sizing */
+            width: 100%;
+            height: 200px;
+            box-sizing: border-box;
 
             /*show in inspect and change from content to border*/
             /*also change box-sizing in the inspect area */
@@ -30,9 +47,11 @@
 
             /*add some padding*/
             /* show different ways to pad: t/b l/r, and t r b l */
+            padding: 10px 40px;
 
             /*add some margin*/
             /* show different ways to add margin: t/b l/r, and t r b l */
+            margin-left: 50px;
 
             /*note that the body has margin by default*/
             /* show it in the browser inspect */
