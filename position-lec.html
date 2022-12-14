@@ -1,0 +1,105 @@
+<!--
+from https://leannezhang.medium.com/difference-between-css-position-absolute-versus-relative-35f064384c6#:~:text=position%3A%20relative%20places%20an%20element,changing%20the%20layout%20around%20it.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+
+    <style>
+        .parent {
+            border: 10px black dashed;
+            display: inline-block;
+            position: static;
+        }
+        .parent2{
+            border: 10px black dotted;
+            display: inline-block;
+            position: static;
+        }
+
+        #float-five {
+            display: block;
+            background: goldenrod;
+            width: 50px;
+            height: 50px;
+            float: none;
+            clear: none;
+        }
+        #float-six {
+            display: block;
+            background: lightskyblue;
+            width: 100px;
+            height: 100px;
+            float: none;
+            clear: none;
+        }
+        #p-div {
+            float: none;
+            clear: none;
+        }
+        #float-p {
+            float: none;
+            clear: none;
+        }
+        /*    float demo    */
+        /* 1. no floats*/
+        /* 2. small box float left*/
+        /* 3. big box float left*/
+        /* 4. both boxes float left*/
+        /* 5. small box float left, big box float right*/
+        /* 6. small box float left, big box float right, p clear left */
+        /*    try clear left on p-div*/
+        /* 7. small box float right, big box float left, p clear right*/
+        /* 8. small box float right, big box float left, p clear both*/
+
+        .box {
+            display: inline-block;
+            background: lightcoral;
+            width: 100px;
+            height: 100px;
+        }
+        #two {
+            top: 10px;
+            left: 10px;
+            background: green;
+            position: static;
+        }
+
+
+
+        #float-heading {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        #float-heading2 {
+            margin-top:30px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h4 id="float-heading">Float</h4>
+    <div id="float-parent">
+        <div class="box" id="float-five">Five</div>
+        <div class="box" id="float-six">Six</div>
+        <div id="p-div">
+            <p id="float-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquid at culpa deleniti deserunt dicta enim, expedita explicabo harum minus optio placeat quis recusandae repudiandae temporibus tenetur ullam voluptatem</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h4 id="float-heading2">Positioning</h4>
+    <div class="parent">
+        <div class="parent2">
+            <div class="box" id="one">One</div>
+            <div class="box" id="two">Two</div>
+            <div class="box" id="three">Three</div>
+            <div class="box" id="four">Four</div>
+        </div>
+    </div>
+
+</body>
+</html>
