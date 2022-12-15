@@ -8,3 +8,22 @@
  * here. If you do, the automated tests will not be able to see your functions.
  */
 
+function isGreaterThan(a, b) {
+    if(a > b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isLessThan(a, b) {
+    if(a < b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function calcCube(a) {
+    return a * a * a;
+}

@@ -16,7 +16,7 @@ from https://leannezhang.medium.com/difference-between-css-position-absolute-ver
         .parent2{
             border: 10px black dotted;
             display: inline-block;
-            position: static;
+            position: relative;
         }
 
         #float-five {
@@ -38,10 +38,13 @@ from https://leannezhang.medium.com/difference-between-css-position-absolute-ver
         #p-div {
             float: none;
             clear: none;
+            width: 100px;
+            height: 100px;
+            background-color: #0fb784;
         }
         #float-p {
             float: none;
-            clear: none;
+            clear: both;
         }
         /*    float demo    */
         /* 1. no floats*/
@@ -61,10 +64,12 @@ from https://leannezhang.medium.com/difference-between-css-position-absolute-ver
             height: 100px;
         }
         #two {
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
+            /*bottom: 370px;*/
+            /*right: 100px;*/
             background: green;
-            position: static;
+            position: sticky;
 
         }
 
@@ -90,7 +95,7 @@ from https://leannezhang.medium.com/difference-between-css-position-absolute-ver
         <div class="box" id="float-five">Five</div>
         <div class="box" id="float-six">Six</div>
         <div id="p-div">
-            <p id="float-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aliquid at culpa deleniti deserunt dicta enim, expedita explicabo harum minus optio placeat quis recusandae repudiandae temporibus tenetur ullam voluptatem</p>
+            <p id="float-p">dsfgsdfgsdfggfd</p>
         </div>
     </div>
 
