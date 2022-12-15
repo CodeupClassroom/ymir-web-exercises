@@ -5,10 +5,46 @@
     <title>Flexbox Fundamentals Lecture</title>
 
     <style>
+        #myBoxes {
+            border: 3px dashed black;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
 
+        .box {
+            width: 100px;
+            height: 30px;
+            border: 1px solid darkblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .redBox {
+            background-color: red;
+            color: white;
+        }
+        .yellowBox {
+            background-color: yellow;
+            height: 50px;
+        }
+        .greenBox {
+            background-color: green;
+            color: white;
+            height: 40px;
+
+        }
     </style>
 </head>
 <body>
 
+    <h4>Flexbox fundamentals demo</h4>
+    <div id="myBoxes">
+        <div class="box redBox">Howdy</div>
+        <div class="box yellowBox">Howdy</div>
+        <div class="box greenBox">Howdy</div>
+    </div>
 </body>
 </html>
