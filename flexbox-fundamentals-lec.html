@@ -8,18 +8,33 @@
         #myBoxes {
             border: 3px dashed black;
             height: 300px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
+            width: 100%;
+            max-width: 800px;
+
         }
 
+        /*
+        1. row justify-content start, end, left, right, center, and 3 spacings
+        2. switch to col and justify-content
+            remove fixed height of .box (stretches along cross axis. stretch is default value for align-items)
+        3. back to row, justify-content center and try different align-items
+        4. uncomment extra elements and show (static width still shrinks so all elements fit)
+        5. flex wrap (all elements keep their static width)
+            with wrapping, change justify-content and align-items values
+        6. align-content (wrapping required)
+            compare how it works with align-items
+        7. comment out all but first 3 boxes
+            and comment out flex wrap and align-content
+            change order of a box
+        8. align-self one of the boxes
+        9. flex grow all of the boxes (use 1 2 3) and comment out .box width
+         */
         .box {
             width: 100px;
             height: 30px;
-            border: 1px solid darkblue;
+            border: 2px solid darkblue;
             text-align: center;
-            vertical-align: middle;
+            line-height: 30px;
         }
 
         .redBox {
@@ -29,22 +44,39 @@
         .yellowBox {
             background-color: yellow;
             height: 50px;
+            line-height: 50px;
         }
         .greenBox {
             background-color: green;
             color: white;
             height: 40px;
-
+            line-height: 40px;
         }
+
+        .mySpan {
+            height: 100%;
+        }
+
     </style>
 </head>
 <body>
 
     <h4>Flexbox fundamentals demo</h4>
     <div id="myBoxes">
-        <div class="box redBox">Howdy</div>
-        <div class="box yellowBox">Howdy</div>
-        <div class="box greenBox">Howdy</div>
+        <div class="box redBox"><span class="mySpan"><b>1</b></span></div>
+        <div class="box yellowBox"><span class="mySpan"><b>2</b></span></div>
+        <div class="box greenBox"><span class="mySpan"><b>3</b></span></div>
+
+<!--        <div class="box redBox"><span class="mySpan"><b>3</b></span></div>-->
+<!--        <div class="box yellowBox"><span class="mySpan"><b>4</b></span></div>-->
+<!--        <div class="box greenBox"><span class="mySpan"><b>5</b></span></div>-->
+<!--        <div class="box redBox"><span class="mySpan"><b>6</b></span></div>-->
+<!--        <div class="box yellowBox"><span class="mySpan"><b>7</b></span></div>-->
+<!--        <div class="box greenBox"><span class="mySpan"><b>8</b></span></div>-->
+<!--        <div class="box redBox"><span class="mySpan"><b>9</b></span></div>-->
+<!--        <div class="box yellowBox"><span class="mySpan"><b>10</b></span></div>-->
+<!--        <div class="box greenBox"><span class="mySpan"><b>11</b></span></div>-->
+
     </div>
 </body>
 </html>
