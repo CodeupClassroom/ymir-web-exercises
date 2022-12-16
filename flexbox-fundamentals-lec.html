@@ -11,6 +11,12 @@
             width: 100%;
             max-width: 800px;
 
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            /*align-content: space-between;*/
+            /*flex-wrap: wrap;*/
         }
 
         /*
@@ -30,7 +36,7 @@
         9. flex grow all of the boxes (use 1 2 3) and comment out .box width
          */
         .box {
-            width: 100px;
+            /*width: 100px;*/
             height: 30px;
             border: 2px solid darkblue;
             text-align: center;
@@ -40,17 +46,23 @@
         .redBox {
             background-color: red;
             color: white;
+            align-self: flex-end;
+            order: 1;
+            flex-grow: 3;
         }
         .yellowBox {
             background-color: yellow;
             height: 50px;
             line-height: 50px;
+            order: -5;
+            flex-grow: 1;
         }
         .greenBox {
             background-color: green;
             color: white;
             height: 40px;
             line-height: 40px;
+            flex-grow: 2;
         }
 
         .mySpan {
