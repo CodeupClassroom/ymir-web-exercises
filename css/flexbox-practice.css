@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #333333;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* made unordered list a flex container */
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    padding: 1em; /* increases clickable area of anchor tags on all sides by 1em */
+    display: inline-block; /* inline-block to increase clickable area beyond the text */
+}
+nav a:hover {
+    background: black;
+}
+nav ul li:nth-child(4) {
+    /*
+        this allows the last flex item to be right justified
+        by filling remaining space to the left of the flex item with margin
+    */
+    margin-left: auto;
+    /*justify-self: flex-end;*/
+    /*flex-shrink: 1;*/
+}

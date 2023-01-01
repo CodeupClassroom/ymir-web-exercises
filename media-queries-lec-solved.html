@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Queries Demo</title>
+
+<!--  add meta viewport element and look up what it means -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* change background color around large breakpoint */
+    /* and then 3 colors: small, medium, and large (be sure to use min-width and max-width for medium) */
+    /* and use chrome res switcher to show */
+
+    body {
+        background-color: red;
+    }
+
+    @media screen and (min-width:576px) and (max-width:960px) {
+        body {
+            background-color: yellow;
+        }
+    }
+
+    @media screen and (min-width:960px) {
+        body {
+            background-color: green;
+        }
+    }
+
+    /* highlight mobile first design*/
+
+    /*next, make 3 content sections: ul menu thing, photo thing, text thing*/
+    /*   draw 3 wireframes for diff. sizes*/
+    /*    xs: all 3 stacked on top w menu horizontal*/
+    /*    med: menu block horizontal, image and text on line below it*/
+    /*    > med: all 3 divs on same block and menu is vertical display*/
+
+    .container {
+        box-sizing: border-box;
+        border: 1px black solid;
+        padding: 0 10px;
+    }
+
+    #menu {
+        padding: 20px 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #menu-list {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #menu-list > li {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    @media screen and (min-width:576px) and (max-width:960px) {
+        .container {
+            padding: 0;
+        }
+        #image-container {
+            width: calc(33% - 2px);
+            display: inline-block;
+        }
+        #text-container {
+            display: inline-block;
+            width: calc(67% - 2px);
+        }
+    }
+
+    @media screen and (min-width:960px) {
+        .container {
+            padding: 0;
+        }
+        #menu {
+            width: calc(25% - 3px);
+            display: inline-block;
+        }
+        #menu-list > li {
+            display: block;
+            margin: 5px 10px;
+        }
+        #image-container {
+            width: calc(25% - 3px);
+            display: inline-block;
+        }
+        #text-container {
+            display: inline-block;
+            width: calc(50% - 2px);
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+    <div id="menu" class="container">
+        <ul id="menu-list">
+            <li class="menu-list-item">Home</li>
+            <li class="menu-list-item">About</li>
+            <li class="menu-list-item">Contact</li>
+            <li class="menu-list-item">Help</li>
+        </ul>
+    </div>
+
+    <div id="image-container" class="container">
+        <p>Image goes here</p>
+    </div>
+
+    <div id="text-container" class="container">
+        <p>Text goes here</p>
+    </div>
+</body>
+</html>
