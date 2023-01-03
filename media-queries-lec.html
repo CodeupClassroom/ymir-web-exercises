@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <title>Media Queries Demo</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!--  add meta viewport element and look up what it means -->
 
   <style>
-    /* change background color around large breakpoint */
+
+      body {
+          background-color: red;
+      }
+
+      .screen-piece {
+          border: 1px solid black;
+          height: 100px;
+      }
+
+      @media screen and (min-width:768px) {
+          body {
+              background-color: yellow;
+          }
+
+          #my-img {
+              display: inline-block;
+              width: 32%;
+          }
+
+          #my-text {
+              display: inline-block;
+              width: 66%;
+              float: right;
+          }
+      }
+
+      @media screen and (min-width:992px) {
+          body {
+              background-color: green;
+          }
+
+          #my-nav {
+              display: inline-block;
+              width: 24%;
+          }
+
+          #my-img {
+              display: inline-block;
+              width: 24%;
+          }
+
+          #my-text {
+              display: inline-block;
+              width: 49%;
+              float: right;
+          }
+      }
+
+      /* change background color around large breakpoint */
     /* and then 3 colors: small, medium, and large (be sure to use min-width and max-width for medium) */
     /* and use chrome res switcher to show */
 
@@ -22,6 +73,19 @@
   </style>
 </head>
 <body>
+    <div>
 
+        <nav id="my-nav" class="screen-piece">
+            <p>Menu stuff</p>
+        </nav>
+
+        <div id="my-img" class="screen-piece">
+            <p>Image</p>
+        </div>
+
+        <div id="my-text" class="screen-piece">
+            <p>Text</p>
+        </div>
+    </div>
 </body>
 </html>

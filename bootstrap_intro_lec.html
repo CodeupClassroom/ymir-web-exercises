@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap Intro</title>
+
+<!--   import the bootstrap css library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Your custom css styles go here -->
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>DocRob's Old-fashioned Bootstrap Intro</h1>
+
+    <h3>Nav (menu)</h3>
+
+    <!--        add a basic menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+
+                <span class="navbar-text float-end ms-auto">
+                    Navbar text with an inline element
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <hr>
+
+    <h3>Alerts</h3>
+
+
+    <!--        make a warning alert (point out -->
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+
+    <!--        make an information alert with a badge and a dismiss button-->
+    <div class="alert alert-warning alert-dismissible fade show">
+        A simple danger alert—check it out!
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <hr>
+
+    <h3>Cards</h3>
+
+    <!--        make a card with a card-image-top, a card-body, a card-title, card-text. put a link as a button -->
+    <div class="card w-25">
+        <img class="m-1 card-img-top" src="images/art1.jpeg">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur doloremque exercitationem fuga in non numquam obcaecati omnis vero voluptates. A ad asperiores consectetur cumque, delectus dolores enim ex facilis fugiat inventore ipsum laudantium maxime molestias, nesciunt nobis non obcaecati officia optio pariatur quaerat quasi quibusdam sint tenetur totam voluptas voluptate.</p>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>Inputs</h3>
+
+    <!--        make a form with a text input and a submit button-->
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+
+    <hr>
+
+    <h3>Selects</h3>
+
+    <!--        make a select -->
+    <select class="form-select">
+        <option >Open this select menu</option>
+        <option selected value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+
+    <hr>
+
+    <h3>Checkbox group</h3>
+
+    <!--        make a checkbox group-->
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Default radio
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+            Default checked radio
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+            Checked checkbox
+        </label>
+    </div>
+
+    <hr>
+
+    <h3>Tables</h3>
+
+    <!--        make a sweet table -->
+    <table class="table table-danger table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>List group</h3>
+
+    <!--        how about a list group -->
+    <ul class="list-group">
+        <li class="list-group-item active">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item active">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <hr>
+
+    <h3>Tabs</h3>
+
+    <!--        do some tabs -->
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1" href="#"><span class="badge bg-secondary">1</span> Tab 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tab2">Tab 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#tab3">Tab 3</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" >
+            Page 1 content
+        </div>
+        <div class="tab-pane fade" id="tab2">
+            Page 2 content
+        </div>
+        <div class="tab-pane fade" id="tab3">
+            Page 3 content
+        </div>
+    </div>
+
+</div>
+
+
+<!-- import the bootstrap js library -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
