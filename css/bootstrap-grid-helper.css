@@ -1,0 +1,18 @@
+/*
+vh vs. % article
+https://stackoverflow.com/questions/31039979/css-units-what-is-the-difference-between-vh-vw-and
+ */
+body {
+    height: 100vh;
+}
+/* row color */
+div.row {
+    border: 1px dashed blue;
+}
+/* cell color */
+div.row > div {
+    border: 1px solid red;
+}
+div.tall-row {
+    height: 300px;
+}
