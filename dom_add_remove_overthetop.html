@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding and Removing DOM Elements</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        #my-form {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1>My Todo List</h1>
+
+    <div id="my-todos" class="row">
+
+        <div class="card col-2">
+            <div class="card-body">
+                Example Todo
+            </div>
+            <div class="card-footer">
+                <button class="delete-todo">Delete Todo</button>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h4>Add a Todo</h4>
+    <form id="my-form" class="todo-form" name="my-form">
+        <label for="add-todo-text" class="form-label">Todo Text</label>
+        <input id="add-todo-text" class="form-control" type="text" value="" placeholder="Enter todo text here">
+        <div class="invalid-feedback">
+            Yo man, this can't be blank!
+        </div>
+        <div class="valid-feedback">
+            Aw yeah, that's some good text!
+        </div>
+        <br>
+        <button id="add-todo" class="form-control btn-primary" type="button">Add Todo</button>
+    </form>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+    (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // add your code here
+
+            function countTodos() {
+                return document.querySelector("#my-todos").children.length;
+            }
+
+            function addTodo() {
+                if(countTodos() >= 10) {
+                    alert("Trying making a Todone first!");
+                    return;
+                }
+
+                if(!validateFields()) {
+                    return;
+                }
+
+                const newTodoText = document.querySelector("#add-todo-text").value;
+                const myTodos = document.querySelector("#my-todos");
+                myTodos.innerHTML += `
+<div class="card col-2">
+    <div class="card-body">
+        ${newTodoText}
+    </div>
+    <div class="card-footer">
+        <button class="delete-todo">Delete Todo</button>
+    </div>
+</div>
+`;
+                addDeleteListeners();
+                document.querySelector("#add-todo-text").value = "";
+                validateFields();
+            }
+            document.querySelector("#add-todo").addEventListener("click", addTodo);
+
+            function deleteTodo(event) {
+                this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
+            }
+
+            function addDeleteListeners() {
+                document.querySelectorAll(".delete-todo").forEach(function (button) {
+                    button.addEventListener("click", deleteTodo);
+                });
+            }
+
+            document.querySelector("#add-todo-text").addEventListener("input", validateFields);
+
+            function validateFields() {
+                let isValid = true;
+                const input = document.querySelector("#add-todo-text");
+                if(input.value.trim().length < 1) {
+                    input.classList.add("is-invalid");
+                    input.classList.remove("is-valid");
+                    isValid = false;
+                } else {
+                    input.classList.add("is-valid");
+                    input.classList.remove("is-invalid");
+                }
+                return isValid;
+            }
+
+            validateFields();
+        });
+    })();
+</script>
+</body>
+</html>
