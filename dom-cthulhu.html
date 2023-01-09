@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Cthulhu</title>
+</head>
+<body>
+
+<img id="cthulhu" src="images/cthulhu.jpeg" alt="">
+
+</body>
+
+<script>
+  (function() {
+    let degrees = 0;
+    const img = document.querySelector("#cthulhu");
+    const body = document.querySelector("body");
+    img.style.transform = `rotate(${degrees}deg)`;
+    body.addEventListener("keydown", function(event) {
+      // console.log(event.code);
+      if(event.code === "ArrowRight") {
+        degrees+=5;
+        img.style.transform = `rotate(${degrees}deg)`;
+      } else if(event.code === "ArrowLeft") {
+        degrees-=5;
+        img.style.transform = `rotate(${degrees}deg)`;
+      }
+    });
+  })();
+</script>
+</html>
