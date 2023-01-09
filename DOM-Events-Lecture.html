@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Events</title>
+</head>
+<body>
+<h1 style="text-align: center">DOM EVENTS</h1>
+<h1>Click</h1>
+
+<button id="btn1">Click Me!</button>
+<button id="btn2">Remove Listener</button>
+
+
+
+<h1>Keyup</h1>
+<input id="keyupEvent"/>
+
+
+
+
+<h1>Change</h1>
+<label>
+  Choose an ice cream flavor:
+  <select class="ice-cream" name="ice-cream">
+    <option value="">Select One …</option>
+    <option value="chocolate">Chocolate</option>
+    <option value="sardine">Sardine</option>
+    <option value="vanilla">Vanilla</option>
+  </select>
+</label>
+
+<div class="result"></div>
+
+
+
+<h1>Form</h1>
+<form id="form">
+  <label>Test field: <input id="inputText" type="text" /></label>
+  <br /><br />
+  <button type="submit">Submit form</button>
+</form>
+<p id="log"></p>
+
+
+
+<script>
+  "use strict";
+  // Click Event
+  var listener = function (event) {
+    alert('You clicked the button!');
+  }
+
+  // To Do
+  // add event listener to btn1
+const btn1= document.getElementById("btn1");
+  btn1.addEventListener('click',listener);
+
+  // To Do
+  // remove event listener from btn1 using btn2
+  const btn2 = document.getElementById("btn2");
+  btn2.addEventListener('click',function (){
+    btn1.removeEventListener('click',listener);
+  })
+
+
+
+
+
+
+
+
+  // Keyup Event
+  const keyupElement = document.querySelector('#keyupEvent');
+  keyupElement.addEventListener('keyup', function (){
+    console.log(keyupElement.value)
+  })
+
+
+
+
+
+
+
+// Change Event
+  const selectElement = document.querySelector('.ice-cream');
+
+  selectElement.addEventListener('change', (event) => {
+    const result = document.querySelector('.result');
+    result.textContent = `You like ${event.target.value}`;
+  });
+
+
+
+
+
+// Submit Event
+  function logSubmit(event) {
+    log.textContent = `Form Submitted! Timestamp: ${event.timeStamp}`;
+    event.preventDefault();
+  }
+
+  const form = document.getElementById('form');
+  const log = document.getElementById('log');
+  form.addEventListener('submit', logSubmit);
+
+
+
+
+
+</script>
+</body>
+</html>
