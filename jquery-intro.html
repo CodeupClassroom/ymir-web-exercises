@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Intro</title>
+
+    <style>
+        .my-box {
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="my-h1">Hello world!</h1>
+
+    <div id="box1" class="my-box">Box 1</div>
+    <div id="box2" class="my-box">Box 2</div>
+    <div id="box3" class="my-box">Box 3</div>
+
+    <p id="p1" class="my-p">Paragraph 1</p>
+    <p id="p2" class="my-p">Paragraph 2</p>
+    <p id="p3" class="my-p">Paragraph 3</p>
+
+    <!--check here for jquery releases https://releases.jquery.com/ -->
+<!--what is difference between uncompressed, minified, slim, and slim-minified?-->
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+<script>
+    "use strict";
+
+    (function() {
+
+        // explain jquery and its place in market today
+
+        // introduce jquery object
+        console.log(jQuery.fn.jquery);
+
+        // introduce the jquery object shortcut
+        console.log($.fn.jquery);
+
+        // explain .ready()
+
+        // show $(document).ready()
+        console.log("1");
+        $(document).ready(function() {
+            console.log("howdy 1");
+        });
+        console.log("2");
+
+        // show vanilla js "equivalent"
+        console.log("3");
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("howdy 2");
+        });
+        console.log("4");
+
+        // can also use $(function() {...}) as a .ready()
+
+        // stop for exercise!
+
+
+        // select an element by id and log
+
+        // select elements by class and log
+
+        // select elements by tag and log
+
+        // select child lis in a ul and log
+
+
+        // difference between what querySelector returns and what jquery returns
+        console.log(document.querySelector("#my-h1"));
+        console.log($("#my-h1"));
+
+        // need ref for explanation of a jquery object
+        // https://howtodoinjava.com/jquery/javascript-dom-objects-vs-jquery-objects/
+
+        // try to output innerText and innerHTML with jquery object
+        console.log($("#my-h1").innerText);
+        console.log($("#my-h1").innerHTML);
+
+        // how to read and write innerHTML for jquery objects
+        console.log($("#my-h1").html());
+        $("#my-h1").html("howdy howdy");
+
+        // explain the method chaining above
+
+        // change the background color of all elements with a my-box class
+        $(".my-box").css("background-color", "yellow");
+
+        // do the vanilla js equivalent :)
+        $("p").css("font-size", "28px");
+
+        $("p, .my-box, #my-h1").css("font-size", "48px");
+
+        $('*').css('border', '5px dotted #F00');
+
+
+    })();
+
+</script>
+</body>
+</html>

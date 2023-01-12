@@ -5,7 +5,7 @@
     <title>DOM Cthulhu</title>
 </head>
 <body>
-
+<h1>Cthulhu drank too much!</h1>
 <img id="cthulhu" src="images/cthulhu.jpeg" alt="">
 
 </body>
@@ -20,10 +20,10 @@
       // console.log(event.code);
       if(event.code === "ArrowRight") {
         degrees+=5;
-        img.style.transform = `rotate(${degrees}deg)`;
+        body.style.transform = `rotate(${degrees}deg)`;
       } else if(event.code === "ArrowLeft") {
         degrees-=5;
-        img.style.transform = `rotate(${degrees}deg)`;
+        body.style.transform = `rotate(${degrees}deg)`;
       }
     });
   })();
