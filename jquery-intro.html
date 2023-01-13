@@ -35,30 +35,19 @@
         // explain jquery and its place in market today
 
         // introduce jquery object
-        console.log(jQuery.fn.jquery);
 
         // introduce the jquery object shortcut
-        console.log($.fn.jquery);
 
         // explain .ready()
 
         // show $(document).ready()
-        console.log("1");
-        $(document).ready(function() {
-            console.log("howdy 1");
-        });
-        console.log("2");
 
         // show vanilla js "equivalent"
-        console.log("3");
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("howdy 2");
-        });
-        console.log("4");
 
         // can also use $(function() {...}) as a .ready()
 
-        // stop for exercise!
+
+        // STOP FOR FIRST EXERCISE !!!
 
 
         // select an element by id and log
@@ -71,35 +60,25 @@
 
 
         // difference between what querySelector returns and what jquery returns
-        console.log(document.querySelector("#my-h1"));
-        console.log($("#my-h1"));
 
         // need ref for explanation of a jquery object
         // https://howtodoinjava.com/jquery/javascript-dom-objects-vs-jquery-objects/
 
         // try to output innerText and innerHTML with jquery object
-        console.log($("#my-h1").innerText);
-        console.log($("#my-h1").innerHTML);
 
         // how to read and write innerHTML for jquery objects
-        console.log($("#my-h1").html());
-        $("#my-h1").html("howdy howdy");
 
         // explain the method chaining above
 
         // change the background color of all elements with a my-box class
-        $(".my-box").css("background-color", "yellow");
 
         // do the vanilla js equivalent :)
 
         // change font size of all p els to 28px
-        $("p").css("font-size", "28px");
 
         // change font family of p els, my-box classes, and my-h1 id to sans-serif
-        $("p, .my-box, #my-h1").css("font-family", "sans-serif");
 
         // add a 5px dotted red border to all els
-        $('*').css('border', '5px dotted #F00');
 
 
     })();
