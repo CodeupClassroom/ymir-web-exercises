@@ -25,6 +25,7 @@
 
     <!--check here for jquery releases https://releases.jquery.com/ -->
 <!--what is difference between uncompressed, minified, slim, and slim-minified?-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
 <script>
     "use strict";
@@ -34,14 +35,29 @@
         // explain jquery and its place in market today
 
         // introduce jquery object
+        console.log(jQuery.fn.jquery);
 
         // introduce the jquery object shortcut
+        console.log($.fn.jquery);
 
         // explain .ready()
+        console.log("pre dom loaded jquery");
+        $(document).ready(function() {
+            console.log("dom loaded according to jquery");
+        });
+        // $(function() {
+        //     console.log("dom loaded according to jquery");
+        // });
+        console.log("post dom loaded jquery");
 
         // show $(document).ready()
 
         // show vanilla js "equivalent"
+        console.log("pre dom loaded (vanilla js)");
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("vanilla JS dom loaded")
+        });
+        console.log("post dom loaded (vanilla js)");
 
         // can also use $(function() {...}) as a .ready()
 
