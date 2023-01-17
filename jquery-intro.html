@@ -16,12 +16,17 @@
     <h1 id="my-h1">Hello world!</h1>
 
     <div id="box1" class="my-box">Box 1</div>
-    <div id="box2" class="my-box">Box 2</div>
+    <div id="box1" class="my-box">Box 2</div>
     <div id="box3" class="my-box">Box 3</div>
 
     <p id="p1" class="my-p">Paragraph 1</p>
     <p id="p2" class="my-p">Paragraph 2</p>
     <p id="p3" class="my-p">Paragraph 3</p>
+
+    <ul id="my-ul">
+        <li>Hi</li>
+        <li>Bye</li>
+    </ul>
 
     <!--check here for jquery releases https://releases.jquery.com/ -->
 <!--what is difference between uncompressed, minified, slim, and slim-minified?-->
@@ -35,29 +40,29 @@
         // explain jquery and its place in market today
 
         // introduce jquery object
-        console.log(jQuery.fn.jquery);
-
-        // introduce the jquery object shortcut
-        console.log($.fn.jquery);
-
-        // explain .ready()
-        console.log("pre dom loaded jquery");
-        $(document).ready(function() {
-            console.log("dom loaded according to jquery");
-        });
-        // $(function() {
+        // console.log(jQuery.fn.jquery);
+        //
+        // // introduce the jquery object shortcut
+        // console.log($.fn.jquery);
+        //
+        // // explain .ready()
+        // console.log("pre dom loaded jquery");
+        // $(document).ready(function() {
         //     console.log("dom loaded according to jquery");
         // });
-        console.log("post dom loaded jquery");
-
-        // show $(document).ready()
-
-        // show vanilla js "equivalent"
-        console.log("pre dom loaded (vanilla js)");
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("vanilla JS dom loaded")
-        });
-        console.log("post dom loaded (vanilla js)");
+        // // $(function() {
+        // //     console.log("dom loaded according to jquery");
+        // // });
+        // console.log("post dom loaded jquery");
+        //
+        // // show $(document).ready()
+        //
+        // // show vanilla js "equivalent"
+        // console.log("pre dom loaded (vanilla js)");
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     console.log("vanilla JS dom loaded")
+        // });
+        // console.log("post dom loaded (vanilla js)");
 
         // can also use $(function() {...}) as a .ready()
 
@@ -66,34 +71,80 @@
 
 
         // select an element by id and log
+        const myH1 = $("#my-h1");
+        // const myH1 = document.querySelector("#my-h1");
+        // $("#my-h1")
+        console.log(myH1);
 
         // select elements by class and log
+        const myBoxes = $(".my-box");
+        console.log(myBoxes);
 
         // select elements by tag and log
+        console.log($("p"));
 
         // select child lis in a ul and log
+        console.log($("#my-ul > li"));
 
 
         // difference between what querySelector returns and what jquery returns
+        console.log(document.querySelector("#my-h1"));
 
         // need ref for explanation of a jquery object
         // https://howtodoinjava.com/jquery/javascript-dom-objects-vs-jquery-objects/
 
         // try to output innerText and innerHTML with jquery object
+        // $("#my-h1")[0].innerText = "Blah blah";
+        console.log($("#my-h1").html("<i>Blah blah blah</i>"));
+
+        console.log($("#my-h1").html());
 
         // how to read and write innerHTML for jquery objects
 
         // explain the method chaining above
 
         // change the background color of all elements with a my-box class
+        // const myBoxes2 = document.querySelectorAll(".my-box");
+        // myBoxes2.forEach(function(myBox) {
+        //     myBox.style.backgroundColor = "red";
+        // })
+        $(".my-box").css("background-color", "red");
+        $("#my-h1").css("background-color", "red");
 
         // do the vanilla js equivalent :)
 
         // change font size of all p els to 28px
+        $("p").css({
+            "font-size": "28px",
+            "font-family": "sans-serif"
+        });
+
 
         // change font family of p els, my-box classes, and my-h1 id to sans-serif
+        // $("p, .my-box, #my-h1").css("font-family", "sans-serif, serif");
 
         // add a 5px dotted red border to all els
+        $("*").css("border", "5px dotted cornflowerblue");
+
+        // change myboxes background color to blue on hover
+        // jquery version
+        $(".my-box").hover(function() {
+            $(this).css("background-color", "blue");
+        }, function() {
+            $(this).css("background-color", "red");
+        });
+
+        // vanilla js version
+        // const myBoxes3 = document.querySelectorAll(".my-box");
+        // myBoxes3.forEach(function(myBox) {
+        //     myBox.addEventListener("mouseover", function() {
+        //         this.style.backgroundColor = "blue";
+        //     });
+        //     myBox.addEventListener("mouseout", function() {
+        //         this.style.backgroundColor = "red";
+        //     });
+        // });
+
 
 
     })();
