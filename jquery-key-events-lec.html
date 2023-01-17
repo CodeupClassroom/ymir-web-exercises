@@ -43,6 +43,17 @@
   $(document).ready(function() {
 
     // add a keyup, keydown, keypress on the text input
+      $("#my-input").keydown(function(event) {
+          // event.preventDefault();
+          console.log(`keydown happened: ${event.key}`);
+      });
+      $("#my-input").keyup(function() {
+          console.log("keyup happened");
+      });
+      // $("#my-input").keypress(function() {
+      //     console.log("keypress happened");
+      // });
+
 
       // highlight difference between keypress and keydown
 
@@ -53,6 +64,16 @@
     // now put a keydown handler on the body
       // use arrow keys to move the input around
 
+      $("body").keydown(function(event) {
+          console.log(`keydown on body: ${event.key}`);
+      });
+
+      // use jquery's on function
+      $("#my-input").on("keypress", function() {
+          console.log("keypress happened");
+      });
+
+      $("#my-input").off("keypress");
 
   });
 </script>
