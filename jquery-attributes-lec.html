@@ -15,6 +15,10 @@
       border: 2px solid red;
     }
 
+    .cool-bg {
+      background-color: cornflowerblue;
+    }
+
 
   </style>
 </head>
@@ -45,13 +49,34 @@
   $(document).ready(function() {
 
     // when the h4 is clicked alert the html() and then set the html() to Hello World
+    const myVar = $("#my-h4-1").html();
+    $("#my-h4-1").click(function() {
+      alert(myVar);
+      $("#my-h4-1").html("Hello World");
+    })
 
     // click Add Class to add the cool-hover class to all the lis
+    $("#add-class-btn").click(function() {
+      $("li").addClass("cool-hover");
+    });
 
     // click Remove Class to remove the cool-hover class from all the lis
+    $("#remove-class-btn").click(function() {
+      $("li").removeClass("cool-hover");
+    });
+
+    let toggleState = 0;
 
     // click the Toggle Class to toggle the cool-border class on all the lis
-
+    $("#toggle-class-btn").click(function() {
+      if(toggleState % 2 === 0) {
+        $("li").toggleClass("cool-border");
+        toggleState++;
+      } else {
+        $("li").toggleClass("cool-bg");
+        toggleState++;
+      }
+    });
 
     // TRAVERSING
 
