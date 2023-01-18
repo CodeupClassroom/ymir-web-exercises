@@ -81,23 +81,42 @@
 
     // use the .each method to change every other LI to light grey background color
 
+    $("li").each(function(index) {
+      // use the index to determine if it is an odd or even row
+      if(index % 2 === 0) {
+        $(this).css("background-color", "lightgrey");
+      }
+    });
+
     // use the .first method to change the font-weight of the first LI
+    $("li").first().css("font-weight", "bolder");
 
     // use the .last method to change the font-weight to be the same as the first LI
       // be sure to read the font-weight from the first LI
+    $("li").last().css("font-weight", "bolder");
 
 
     // use the .children() method to add the BS ms-5 class
       // to all of the container-fluid's children
-    // $(".container-fluid").children().addClass("ms-5");
+    $(".container-fluid").children().addClass("ms-5");
+    // $(".container-fluid > *").addClass("ms-5");
 
     // get the parent of the button with an id add-class-btn
+    // console.log($("#add-class-btn").parent().html());
 
     // get the next sibling of the button with an id add-class-btn
+    console.log($("#add-class-btn").next().html());
+
+
+    console.log($("#my-h4-1").next().children().length);
 
     // QUESTION: how do we add a new li to the ul?
       // can we just use jquery for it?
-
+    console.log($("ul").html());
+    let oldHTML = $("ul").html();
+    oldHTML += `<li class="my-li">Item 6</li>`;
+    oldHTML += `<li class="my-li">Item 7</li>`;
+    $("ul").html(oldHTML);
   });
 </script>
 
