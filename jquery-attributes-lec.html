@@ -71,11 +71,10 @@
     $("#toggle-class-btn").click(function() {
       if(toggleState % 2 === 0) {
         $("li").toggleClass("cool-border");
-        toggleState++;
       } else {
         $("li").toggleClass("cool-bg");
-        toggleState++;
       }
+      toggleState++;
     });
 
     // TRAVERSING
