@@ -10,9 +10,12 @@
 <body>
 
     <div class="container-fluid">
-        <div id="my-div">
-            Data will show here... eventually
-        </div>
+<!--        <div id="my-div">-->
+<!--            Data will show here... eventually-->
+<!--        </div>-->
+        <p id="p1">P1</p>
+        <p id="p2">P2</p>
+        <p id="p3">P3</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -26,32 +29,79 @@
                 // WHITEBOARD!
                 // mention different types of requests
                 // mention different types of data
-                // show https://java.codeup.com as an example request and show the response as htnk
+                // show https://java.codeup.com as an example request and show the response as html
 
             // make a simple AJAX request to http://localhost
                 // and show the echo server
+            // $.ajax("http://localhost/?sort=desc&state=TX");
+            //
+            // // do a POST
+            // $.ajax("http://localhost/", {
+            //     type: "POST",
+            //     dataType: "json",
+            //     contentType: "application/json",
+            //     data: JSON.stringify({
+            //         name: "Bob Smith",
+            //         age: 42
+            //     })
+            // });
+            //
+            // // do a PUT
+            // $.ajax("http://localhost/v1/people/555", {
+            //     type: "PUT",
+            //     dataType: "json",
+            //     contentType: "application/json",
+            //     data: JSON.stringify({
+            //         name: "Bob Smith",
+            //         age: 52
+            //     })
+            // });
+            //
+            //     // do a DELETE
+            //
+            // $.ajax("http://localhost", {
+            //         type: "DELETE",
+            //         dataType: "json"
+            // });
+
+                // do some method chaining
+                // use .done() to see the data from the GET request
+
+        //     $.ajax("http://localhost").done(function(data) {
+        //         // iterate over the data array
+        //         // and print out each thing
+        //         // console.log(data);
+        //         // for (const row of data) {
+        //         //     console.log(row);
+        //         // }
+        //         $("#my-div").text(data[0].currentPet.age);
+        //
+        // }).fail(function(jqXhr, status, error) {
+        //         console.log("crap! "  + jqXhr.status)
+        //     });
 
 
-            // do a POST
-
-            // do a PUT
-
-            // do a DELETE
-
-            // do some method chaining
-            // use .done() to see the data from the GET request
-
-            // use .fail() and make a 404 happen
+                // use .fail() and make a 404 happen
                 // be sure to print the status
                 // mutually exclusive with done()
 
-            // show all the pretty http response codes
+                // show all the pretty http response codes
 
-            // add .always() and explain
+        $.ajax("https://pokeapi.co/api/v2/pokemon/charmanderX")
+            .done(function(data) {
+                console.log(data);
+                $("#p1").text(data.name);
+                $("#p2").text(data.height);
+                $("#p3").text(data.weight);
+            })
+            .fail(function(statusCode) {
+                console.log(statusCode.status);
+            });
+                // add .always() and explain
 
-            // point out get and post shorthand
+                // point out get and post shorthand
 
-            // use a real api!
+                // use a real api!
 
 
         // introduce JSON MAYBE DO THIS LAST BEFORE ANIME QUOTE DEMO
