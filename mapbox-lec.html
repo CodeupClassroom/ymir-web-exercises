@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Demo</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<!--  include mapbox css link-->
+<!--    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+    <style>
+        #my-map {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="form-group">
+        <label for="address-input" class="form-label">Enter an address</label>
+        <input id="address-input" class="form-input" type="text">
+    </div>
+
+    <!--make a container in which to show the map-->
+    <div id="my-map"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<!--include mapbox js -->
+<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+
+<!--include my keys!!!-->
+<script src="js/keys.js"></script>
+
+<!--include geocoding library-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<script>
+    $(document).ready(function() {
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+
+        const map = new mapboxgl.Map({
+            container: "my-map",
+            style: "mapbox://styles/mapbox/streets-v12",
+            zoom: 8,
+            center: [-98.4946, 29.4252]
+        });
+
+        let marker = new mapboxgl.Marker().setLngLat([-98.4946, 29.4252]).addTo(map);
+
+        // find out where north star mall is and make a marker and popup for it
+        // the  geocode method from mapbox-geocoder-utils.js
+
+        function pinThatAddress(address) {
+            geocode(address, MAPBOX_API_KEY).then(function(result) {
+                console.log(result);
+                const marker = new mapboxgl.Marker();
+                marker.setLngLat(result);
+                marker.addTo(map);
+
+                const popup = new mapboxgl.Popup();
+                popup.setHTML(`<h3>${address}</h3>`);
+                marker.setPopup(popup);
+
+            }).catch(function(error) {
+                console.log("Boom");
+            });
+        }
+
+        pinThatAddress("North Star Mall");
+        pinThatAddress("Rackspace");
+
+        // reverse geocode method from mapbox-geocoder-utils.js
+        reverseGeocode({lng: -98.393114, lat: 29.507893}, MAPBOX_API_KEY).then(function(results) {
+            // logs the address for The Alamo
+            console.log(results);
+        });
+
+        // marker = new mapboxgl.Marker();
+        // marker.setLngLat([-98.4960, 29.5185]);
+        // marker.addTo(map);
+        //
+        // const popup = new mapboxgl.Popup();
+        // popup.setHTML("<h3>North Start Mall</h3>");
+        // marker.setPopup(popup);
+    });
+</script>
+</body>
+</html>
