@@ -88,6 +88,10 @@
                 // mutually exclusive with done()
 
                 // show all the pretty http response codes
+    $.ajax("https://animechan.vercel.app/api/random")
+        .done(function(data) {
+            console.log(data);
+        });
 
         $.ajax("https://pokeapi.co/api/v2/pokemon/charmander")
             .done(function(data) {
@@ -111,28 +115,14 @@
             // show JSON equivalent
 
         // use imperial units
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: OPENWEATHER_API_KEY,
-            q:     "San Antonio, US",
-            units: "imperial"
-        }).done(function(data) {
-            console.log(data);
-        });
 
         // no cors problems THANK GOD!
 
 
         // HOWEVER: FOR 5 DAY FORECAST this api is not what we want
         // we must use the one call endpoint!
+        // https://openweathermap.org/api/one-call-api#parameter
         // notice we must now use lat/lon instead of the city name + state
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
-            APPID: OPENWEATHER_API_KEY,
-                lat:    29.423017,
-                lon:   -98.48527,
-            units: "imperial"
-        }).done(function(data) {
-            console.log(data);
-        });
 
         // where is our data?!?
 
@@ -143,10 +133,6 @@
 
         // what is dt ?  how to convert it to something more recognizable?
         // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
-        // console.log(data.daily[0].dt);
-        // const d = new Date(data.daily[2].dt * 1000);
-        // let day = d.getDay();
-        // console.log(day);
 
         // what about the weather icon??? check out .daily[x].weather[0].icon
 
