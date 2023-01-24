@@ -131,13 +131,18 @@
                 // show all the pretty http response codes
 
         function getQuote() {
+            // clear previous quote if any
             $("#anime").text("");
             $("#character").text("");
             $("#quote").text("");
+
+            // start the loading animation
             $("#loading-pic").removeClass("d-none");
+
+            // get the quote and display it whenever it finishes
             $.ajax("https://animechan.vercel.app/api/random")
                 .done(function(data) {
-                    console.log(data);
+                    // console.log(data);
                     $("#anime").text(data.anime);
                     $("#character").text(data.character);
                     $("#quote").text(data.quote);
@@ -145,7 +150,9 @@
                 }).fail(function(error) {
                 console.log("RATS! an error");
             }).always(function() {
+                // don't forget to stop (hide( the loading animation
                 $("#loading-pic").addClass("d-none");
+
             })
         }
 
@@ -172,7 +179,27 @@
             // show JS object and talk about how it may not be usable outside of JS
             // show JSON equivalent
 
+        /*
+                    APPID: OPENWEATHER_API_KEY,
+            lat:    29.423017,
+            lon:   -98.48527,
+            units: "imperial"
+
+         */
         // use imperial units
+        // $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        $.get(`https://api.openweathermap.org/data/2.5/forecast`, {
+            APPID: OPENWEATHER_API_KEY,
+            lat:    29.423017,
+            lon:   -98.48527,
+            units: "imperial"
+            }
+        ).done(function(data) {
+            console.log(data);
+            // console.log('The entire response:', data);
+            // console.log('Diving in - here is current information: ', data.current);
+            // console.log('A step further - information for tomorrow: ', data.daily[1]);
+        });
 
         // no cors problems THANK GOD!
 

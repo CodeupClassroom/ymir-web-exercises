@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Reduce Filter Demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div>
+
+    <ul id="my-ul"></ul>
+
+</div>
+</body>
+
+<script>
+    "use strict";
+    (function() {
+        // explain in general what map reduce filter are
+        //  array processing helper functions:
+        //      map: for when you want to make a TRANSFORM (or produce a different kind of value) PER ELEMENT
+        //      reduce: for when you want to produce a single value for the entire array (like max() or a sum())
+        //      filter: for when you want a subset of the array based on some kind of logic (like person.age > 50)
+        // IMPORTANT: THEY DO NOT MODIFY THE ORIGINAL ARRAY!
+
+        // map
+        // remember: RETURNS AN ARRAY OF THE TRANSFORMATIONS
+        // lets have an array of tools produce the html versions of the tools as LIs
+        // we will then set the inner html of my-li to be the result
+        const tools = [
+            {
+                name: "hammer",
+                qty: 3
+            },
+            {
+                name: "wrench",
+                qty: 5
+            },
+            {
+                name: "spanner",
+                qty: 2
+            },
+        ]
+        // first let's see what is produced in a raw state
+        const html = tools.map(function(singleTool) {
+            return `<li>${singleTool.name} : ${singleTool.qty}</li>`
+        })
+        console.log(html);
+
+        document.querySelector("#my-ul").innerHTML = html.join("");
+
+
+
+        // reduce
+        // REMEMBER: RETURNS A SINGLE VALUE (can be a JS primitive or object, etc.)
+        // let's use reduce to HELP in calculating an average for an array
+        // we will use reduce to calculate the sum of the elements
+        const testGrades = [78, 92, 63, 83, 100];
+
+        // remember that an average is ( sum of elements / # of elements )
+
+        // for reduce, the function is how it modifies the single value per element
+        // and the 2nd argument to reduce is the INITIAL VALUE of the single value
+        const sum = testGrades.reduce(function(mySum, currentElement) {
+            return mySum + currentElement;
+        }, 0);
+        // answer should be 83.2
+        console.log(sum / testGrades.length)
+
+        // filter
+        // REMEMBER: RETURNS AN ARRAY THAT IS THE SUBSET OF ELEMENTS
+        // use filter to produce those people who are 35 or older
+        const people = [
+            {
+                name: "Bob",
+                age: 42
+            },
+            {
+                name: "Sue",
+                age: 23
+            },
+            {
+                name: "Lou",
+                age: 37
+            },
+            {
+                name: "Suzie",
+                age: 31
+            },
+            {
+                name: "Ragnar",
+                age: 78
+            }
+        ]
+
+        const oldPeople = people.filter(function(person) {
+            if(person.age >= 35) {
+                return person;
+            }
+        });
+        // should return 3 people: Bob, Lou, and Ragnar
+        console.log(oldPeople);
+
+    })();
+</script>
+</html>
