@@ -29,6 +29,7 @@
         // remember: RETURNS AN ARRAY OF THE TRANSFORMATIONS
         // lets have an array of tools produce the html versions of the tools as LIs
         // we will then set the inner html of my-li to be the result
+        // NOTE: you could also use reduce for this type of transformation
         const tools = [
             {
                 name: "hammer",
@@ -44,12 +45,6 @@
             },
         ]
         // first let's see what is produced in a raw state
-        const html = tools.map(function(singleTool) {
-            return `<li>${singleTool.name} : ${singleTool.qty}</li>`
-        })
-        console.log(html);
-
-        document.querySelector("#my-ul").innerHTML = html.join("");
 
 
 
@@ -63,11 +58,7 @@
 
         // for reduce, the function is how it modifies the single value per element
         // and the 2nd argument to reduce is the INITIAL VALUE of the single value
-        const sum = testGrades.reduce(function(mySum, currentElement) {
-            return mySum + currentElement;
-        }, 0);
-        // answer should be 83.2
-        console.log(sum / testGrades.length)
+
 
         // filter
         // REMEMBER: RETURNS AN ARRAY THAT IS THE SUBSET OF ELEMENTS
@@ -95,13 +86,6 @@
             }
         ]
 
-        const oldPeople = people.filter(function(person) {
-            if(person.age >= 35) {
-                return person;
-            }
-        });
-        // should return 3 people: Bob, Lou, and Ragnar
-        console.log(oldPeople);
 
     })();
 </script>
