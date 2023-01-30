@@ -14,67 +14,103 @@
     //  returns a promise
     // make a simple call and log the promise
       // it is NOT the data :(
-    let promise = fetch("docrob/data/inventory.json");
-      console.log(promise);
+      //docrob/data/inventory.json
+    const promise1 = fetch("https://animechan.vercel.app/api/random");
+      // console.log(promise1);
 
     // explain simply what a promise is
     //  contains the current state of an asynchronous call
     //    starts as Pending and eventually can become resolved (success) or rejected (error)
     //    must use .then to handle resolved and .catch to handle rejected
+     const promise2 = promise1.then(function(response) {
+          // executed when fetch call returns successfully
+          if(response.status !== 200) {
+              console.log("Hey man check your url");
+              // abort by rejecting the promise
+              // return Promise.reject("Hey man check your url");
+          }
+          return response.json();
+      });
+      promise2.then(function(data) {
+          console.log(data);
+      });
+      promise2.catch(function(error) {
+          // this is where we can react to an error from the promise failing
+          console.log("Ouch: " + error);
+      })
+    promise2.finally(function() {
+        // call finally when you want to clean up regardless of success or fail
+        // like db connection or loading spinner
+        console.log("finally something happens")
+    });
+
+      console.log("Done????");
+
     //    can use .finally to clean up in both cases
     // change above example to show the response status code of the call
       // and catch to show and handle a 404
       // DON'T CHAIN THEM YET
-    promise.then(function(result) {
-        console.log(result);
-        console.log(result.status);
-    });
-    promise.catch(function(error) {
-        console.log(error);
-    });
 
     // chain the promise methods together
         // show a call to a json file
         // show response.json() and then 2nd .then()
             // kind of readable but ick, compare to .ajax()
             // point out that .then() actually returns a promise
-            // and USING the data needs to happen in the .then() handler FOR NOW
+            // and USING the data needs to happen in the 2nd .then() handler FOR NOW
         // also put catch and a finally on it just for grins
         // just log stuff in finally
         // in catch, check for empty data array and show Promise.reject("no data")
-    fetch("docrob/data/inventory.json")
-        .then(function(result) {
-            console.log("data is not ready to be used here");
-            return result.json();
-        }).then(function(data) {
-            console.log(data);
-            if(data.length === 0) {
-                return Promise.reject("no data");
-            }
-        }).catch(function(error) {
-            console.log("An error occurred: " + error);
-        });
 
+      fetch("https://animechan.vercel.app/api/random")
+          .then((response) => response.json())
+          .then((quote) => console.log(quote))
+          .catch((error) => console.log(error))
+          .finally(() => console.log("done"));
 
     // writing a function that returns a promise
         // good to put specialized code inside a function, but using .then on the returned promise is ugly
-    getInventory()
-        .then(function(data) {
-            console.log(data);
-        });
 
-    function getInventory() {
-        return fetch("docrob/data/inventory.json")
-            .then(function(result) {
-                return result.json();
-            })
-    }
+    // write a function getInventory() that returns the inventory data and then the program can use it
+      let myTools = undefined;
+      function getInventory() {
+          return fetch("docrob/data/inventory.json")
+              .then(function(response) {
+                  return response.json();
+              })
+              .then(function(data) {
+                  return data;
+              })
+      }
+
+      // const whoCares = getInventory();
+      // // myTools = getInventory();
+      // console.log(myTools);
 
     // await/async
-      console.log(await getInventory());
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+      // super handy for FORCING asynchronous behavior to be synchronous
+      // has pros and cons
+      myTools = await getInventory();
+      console.log(myTools);
 
     // custom promises? ok, just go over the example in the curriculum. copy, paste it, run it. explain
         // neat, but also point out that never seen custom promises in capstones
+
+      const myPromise = new Promise((resolve, reject) => {
+          if (Math.random() > 0.5) {
+              resolve("yay it worked");
+          } else {
+              reject("boo");
+          }
+      });
+      myPromise.then(function(response) {
+          console.log("success: " + response);
+      });
+      myPromise.catch(function(error) {
+          console.log("fail: " + error);
+      })
+
 
   })();
 </script>
