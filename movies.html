@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<div id="my-movies">
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<script>
+  (function() {
+
+      let movies = undefined;
+
+      function fetchMovies() {
+          fetch("https://lush-screeching-dart.glitch.me/movies")
+              .then(function (response) {
+                  return response.json();
+              }).then(function (data) {
+              movies = data;
+              // now that I have my movie data from glitch
+              // call a function that displays it in the dom
+              displayMovies();
+          });
+      }
+
+      function displayMovies() {
+          // won't be called until movies is loaded
+          let html = "";
+          for (let i = 0; i < movies.length; i++) {
+              html += `<p>${movies[i].name}</p>`;
+
+          }
+          $("#my-movies").html(html);
+      }
+
+      function addMovie() {
+          console.log(movies.length);
+
+      }
+
+      function deleteMovie() {
+          // I have just deleted a movie. refetch them
+          fetchMovies();
+      }
+  })()
+
+</script>
+</body>
+</html>
